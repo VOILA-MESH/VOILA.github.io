@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>VOILA: Quering with smart glasses</title>
+  <meta name="description" content="VOILA: Quering with smart glasses">
+  <meta name="keywords" content="VOILA">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/icon.css">
+  <!-- TODO: change to our icon -->
+  <link rel="icon" href="./static/images/icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+</head>
+
+<body>
+  <!-- navigation bar -->
+  <header>
+    <nav>
+      <ul id="navbar">
+        <li class="active"><a href="index.html">
+          <img src="./static/icons/neural-network.png" alt="My Local Icon" style="width:30px; height:30px; vertical-align:middle;">
+          Aligning Vision-Language Models with Gaze
+        </a></li>
+        <li><a href="g-voila.html">
+          <img src="./static/icons/gvoila-icon.svg" alt="My Local Icon" style="width:30px; height:30px; vertical-align:middle;">
+          (User Study) Gaze-VQA in Daily Scenarios
+        </a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- title, author block -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">VOILA-A: <br><span style="font-size:2.4rem;">Aligning Vision-Language Models with User's Gaze Attention</span></h1>
+            <h5 class="subtitle is-5 publication-awards">NeurIPS 2024 (spotlight)</h5>
+
+            <!-- TODO: add author homepage -->
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <!-- <a href="">Kun Yan</a><sup>*‡,1</sup>, -->
+                Kun Yan<sup>*‡,1</sup>,
+              </span>
+              <span class="author-block">
+                <!-- <a href="">Zeyu Wang</a><sup>*,2</sup>, -->
+                Zeyu Wang<sup>*,2</sup>,
+              </span>
+              <span class="author-block">
+                <!-- <a href="">Lei Ji</a><sup>3</sup>, -->
+                Lei Ji<sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <!-- <a href="">Yuntao Wang</a><sup>2</sup>, -->
+                Yuntao Wang<sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <!-- <a href="">Nan Duan</a><sup>3</sup>, -->
+                Nan Duan<sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <!-- <a href="">Shuai Ma</a><sup>†,1</sup>, -->
+                Shuai Ma<sup>†,1</sup>,
+              </span>
+            </div>
+
+            
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup><font size="-0.4">*</sup>Equal contribution</font></span><br>
+              <span class="author-block"><sup><font size="-0.4">†</sup>Corresponding author</font></span><br>
+              <span class="author-block"><sup><font size="-0.4">‡</sup>Contribution during internship at MSRA</font></span><br>
+
+              <span class="author-block"><sup>1</sup>Beihang University,</span>
+              <span class="author-block"><sup>2</sup>Tsinghua University,</span>
+              <span class="author-block"><sup>3</sup>Microsoft Research</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                    <a href="https://arxiv.org/abs/2401.09454"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                          <i class="ai ai-arxiv"></i>
+                      </span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+                <span class="link-block">
+                  <a href="https://github.com/naykun/Voila-A"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- TODO: Model Link. -->
+                <span class="link-block">
+                  <a href=""
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <img src="static/images/hf_icon.svg" />
+                    </span>
+                    <span>Datasets</span>
+                  </a>
+                </span>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- abstract -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="columns is-centered">
+          <img src="static/images/voila-a/voila1.jpg" style="width:600px; vertical-align:middle; " />
+        </div>
+        <div class="content has-text-justified">
+          <p>
+              In recent years, the integration of vision and language understanding has led to significant advancements in artificial intelligence, particularly through Vision-Language Models (VLMs). However, existing VLMs face challenges in handling real-world applications with complex scenes and multiple objects, as well as aligning their focus with the diverse attention patterns of human users. Gaze information, feasibly collected by AR or VR devices, can serve as a proxy for human attention to guide VLMs. In this paper: 
+            </p>
+            <p>
+              (1) We propose VOILA-A, <b>a novel approach for aligning VLMs with a user’s gaze attention</b>, and design innovative mechanisms to integrate gaze information into VLMs while preserving pre-trained knowledge.
+            </p>
+            <p>
+              (2) We leverage trace data from <a href="https://google.github.io/localized-narratives/">Localized Narratives</a> to annotate instructional data using GPT-4, generating <b>the VOILA-COCO dataset with 72k QA pairs</b>, and demonstrate the scalability of this method.
+            </p>
+            <p>
+              (3) We evaluate VOILA-A through a hold-out validation set and a newly collected <b>VOILA-GAZE test set</b> of real gaze samples, demonstrating that our approach significantly outperforms several baselines.
+            </p>
+            <p>
+              By aligning model attention with human gaze patterns, VOILA-A paves the way for more intuitive, user-centric VLMs and fosters engaging human-AI interaction across a wide range of applications.
+            </p>
+            
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- voila-coco -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Datasets</h2>
+          <h3 class="title is-4">VOILA-COCO: training dataset</h3>
+          <div class="content has-text-justified has-text-centered">
+            <p>
+              Obtaining gaze data for training VLMs can be challenging, as it is difficult to annotate and expensive to acquire. <a href="https://google.github.io/localized-narratives/">Localized Narratives</a>(LN) has annotated 849,000 images with mouse traces that are aligned with each word of the descriptions. By comparing hundreds of minutes of gaze data to mouse trace data, we demonstrate that LN can be used to mimic human gaze modalities.
+            </p>
+            <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                  <td width="50%">
+                    <p>
+                      we design an automatic data annotation process for VOILA-A, aiming to develop a more intuitive and user-centric VLM by aligning model attention with human gaze patterns. Our approach leverages GPT-4 as a visual assistant to annotate trace-aligned instructional data. The data annotation process follows design principles to ensure accurate, relevant, and consistent annotations. These include: <br>1) focus on referable sentences and appropriate tags, <br>2) use conversational format with specific and general questions, <br>3) address visual content aspects with definite answers, <br>4) incorporate complex questions and avoid uncertainty, and <br>5) offer detailed, well-organized explanations.
+                    </p>
+                  </td>
+                  <td width="50%">
+                  <img src="static/images/voila-a/data_pipeline.png"/>
+                  <p class="has-text-centered"> Automatic Data Annotation Pipeline </p>
+                  </td>
+                  <!-- <td width="15%"></td> -->
+              </tr>
+            </table>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- examples of voila-coco -->
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-steve has-text-centered">
+            <img src="static/images/voila-a/qa-example1.png" style="width: 250px;">
+          </div>
+          <div class="item item-steve has-text-centered">
+            <img src="static/images/voila-a/qa-example2.png" style="width: 250px;">
+          </div>
+          <div class="item item-steve has-text-centered">
+            <img src="static/images/voila-a/qa-example3.png" style="width: 250px;">
+          </div>
+          <div class="item item-steve has-text-centered">
+            <img src="static/images/voila-a/qa-example4.png" style="width: 250px;">
+          </div>
+          <div class="item item-steve has-text-centered">
+            <img src="static/images/voila-a/qa-example5.png" style="width: 250px;">
+          </div>
+          <div class="item item-steve has-text-centered">
+            <img src="static/images/voila-a/qa-example6.png" style="width: 250px;">
+          </div>
+          <div class="item item-steve has-text-centered">
+            <img src="static/images/voila-a/qa-example7.png" style="width: 250px;">
+          </div>
+          <div class="item item-steve has-text-centered">
+            <img src="static/images/voila-a/qa-example8.png" style="width: 250px;">
+          </div>
+        </div>
+        <br>
+        <p class="has-text-centered">Examples of VOILA-COCO dataset, we highlight the usage of pronoun when querying with gaze. For detailed annotation pipeline and prompt for GPT, please refer to our paper. </p> 
+      </div>
+    </div>
+  </section>
+
+  <!-- voila-gaze -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h3 class="title is-4">VOILA-GAZE test set of real gaze samples</h3>
+          <div class="content has-text-justified has-text-centered">
+            <p>
+              To further demonstrate the effectiveness of our method in aligning VLMs with real-life users’ gaze attention, we curate a set of 200 QA pairs as our real-life benchmark, named VOILA-GAZE. We leverage data collected in <a href="g-voila.html">G-VOILA</a> to construct this dataset. For detailed information and data examples, please refer to <a href="g-voila.html">G-VOILA</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- model -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">VOILA-A Model</h2>
+          <div class="content has-text-justified has-text-centered">
+            <p>
+                <b>Due to the limited amount of gaze data, it is essential to avoid introducing a significant number of new parameters or making extensive structural modifications.</b> We employ the model architecture from <a href="https://laion.ai/blog/open-flamingo/">OpenFlamingo</a>, which consists of a pre-trained vision encoder, language decoder, and gated cross-attention layers, offering flexibility for multi-image and multi-turn conversational interactions.
+            </p>
+            <img src="static/images/voila-a/model.png" />
+            <p class="has-text-centered"> VOILA-A architecture </p>
+            <p>
+              Based on empirical evidence, we ultimately confirm the effectiveness of the Voila Perceiver Resampler solution, as shown in the figure above. On the left, gaze fixation is transformed into a heatmap, which is subsequently processed through linear layers to encode the visual attention. This encoded data is then segmented into discrete patches that are spatially correlated with corresponding image patches. These gaze patches are further refined into key embeddings, which undergo modulation by a gating mechanism, designed to incrementally integrate gaze data. The resulting gaze and image key embeddings are then combined and subjected to a self-attention mechanism, which synthesizes the information into a cohesive set of latent perceiver embeddings. On the right, the figure delineates the integration pathway where the gaze heatmap and the image concurrently enter the VOILA Perceiver. This integrated input is subsequently directed through gated cross-attention modules before progressing into the language model layers, culminating in a unified output that encapsulates the interplay between visual attention and linguistic processing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- experiment -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+            <h2 class="title is-3">Experiments</h2>
+            <h3 class="title is-4">Evaluation Metrics</h3>
+            <div class="content has-text-justified has-text-centered">
+              <p>
+                (1) <b>GPT-4 Ranking</b>: one-to-one comparison, signifying the extent to which the response aligns with the ground truth image description and answer while demonstrating the model’s language proficiency. The display order is counterbalanced to mitigate GPT-4's sequence ordering bias.<br>
+                (2) <b>Reward Score</b>: we use the reward model from <a href="https://huggingface.co/OpenAssistant/reward-model-deberta-v3-large-v2">here</a>.
+              </p>
+            </div>
+
+            <h3 class="title is-4">Main Results: VOILA-A Exhibits a Balanced Capability Between Helpfulness and Fact Grounding</h3>
+            <div class="content has-text-justified has-text-centered">
+              <p>
+                We adopt <a href="https://github.com/Luodian/Otter">Otter</a> and <a href="https://huggingface.co/papers/2306.14824">Kosmos-2</a> as our baselines. The results demonstrate that VOILA-A outperforms the two baseline models on both the VOILA-COCO-TEST set and the VOILA-GAZE test set, particularly in terms of helpfulness and grounding ability.
+
+              </p>
+             
+              <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    
+                    <td width="50%">
+                    <img src="static/images/voila-a/eval-1.png"/>
+                    <p class="has-text-centered">GPT-Ranking on VOILA-COCO testset.</p>
+                    </td>
+                    <td width="50%">
+                      <img src="static/images/voila-a/eval-2.png"/>
+                    <p class="has-text-centered">GPT-Ranking on VOILA-GAZE.</p>
+                    </td>
+                </tr>
+              </table>
+
+            </div>
+
+
+            
+            <h3 class="title is-4">Ablation Study</h3>
+            <h4 class="title is-6">Query types has a significant impact on Response Quality.</h4>
+            <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                  <td width="50%">
+                    <p>
+                      We investigate the varying performance of different question types, specifically direct and implicit/coreference queries. Results show that VOILA-A maintained strong performance when handling coreference queries with the gaze as guidance while the baseline model greatly decreased.
+                    </p>
+                  </td>
+                  <td width="50%">
+                  <img src="static/images/voila-a/abla-1.png"/>
+                  <p class="has-text-centered">WR means Winning Rate Over Otter-base.</p>
+                  </td>
+              </tr>
+            </table>
+
+            <h4 class="title is-6">Heatmap is a better way to incorporate gaze.</h4>
+            <div class="content has-text-justified has-text-centered">
+
+              <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="50%">
+                      <p>
+                        We implemented several alternative methods for incorporating gaze data into VLMs. These methods include: converting gaze sequences into discrete position tokens for LLMs, using the bounding box position of trace trajectories as additional patch tokens concatenated to VIT image feature token lists, and converting the bounding box coordinates into discrete tokens. However, all these methods failed to outperform the gaze heatmap approach.
+                      </p>
+                    </td>
+                    <td width="50%">
+                    <img src="static/images/voila-a/abla-2.png"/>
+                    <p class="has-text-centered">WR means Winning Rate Over Otter-base.</p>
+                    </td>
+                </tr>
+              </table>
+              <img src="static/images/voila-a/abla-2model.png" />
+
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- qualitative case study -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Qualitative Case Study</h2>
+          <img src="static/images/voila-a/casestudy.png"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+    @article{yan2023voila,
+        title={Voila-A: Aligning Vision-Language Models with User's Gaze Attention},
+        author={Yan, Kun and Ji, Lei and Wang, Zeyu and Wang, Yuntao and Duan, Nan and Ma, Shuai},
+        journal={arXiv preprint arXiv:2401.09454},
+        year={2023}
+    } 
+    </code></pre>
+    </div>
+  </section>
+
+</body>

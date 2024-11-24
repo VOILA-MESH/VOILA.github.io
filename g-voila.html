@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>VOILA: Quering with smart glasses</title>
+  <meta name="description" content="VOILA: Quering with smart glasses">
+  <meta name="keywords" content="VOILA">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/icon.css">
+
+  <!-- TODO: change to our icon -->
+  <link rel="icon" href="./static/images/icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul id="navbar">
+        <li><a href="index.html">
+          <img src="./static/icons/neural-network.png" alt="My Local Icon" style="width:30px; height:30px; vertical-align:middle;">
+          Aligning Vision-Language Models with Gaze
+        </a></li>
+        <li class="active"><a href="g-voila.html">
+          <img src="./static/icons/gvoila-icon.svg" alt="My Local Icon" style="width:30px; height:30px; vertical-align:middle;">
+          (User Study) Gaze-VQA in Daily Scenarios
+        </a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- author -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">G-VOILA: <br><span style="font-size:2.4rem;">Gaze-Facilitated Information Querying in Daily Scenarios</span></h1>
+            <h5 class="subtitle is-5 publication-awards">IMWUT 2024</h5>
+            <!-- TODO: add author homepage -->
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <!-- <a href="">Zeyu Wang</a><sup>*,2</sup>, -->
+                Zeyu Wang<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <!-- <a href="">Yuanchun Shi</a><sup>2</sup>, -->
+                Yuanchun Shi<sup>*,12</sup>,
+              </span>
+              <span class="author-block">
+                <!-- <a href="">Yuntao Wang</a><sup>2</sup>, -->
+                Yuntao Wang<sup>*,1</sup>,
+              </span>
+              <span class="author-block">
+                <!-- <a href="">Yuchen Yao</a><sup>2</sup>, -->
+                Yuchen Yao<sup>1</sup>,
+              </span>
+              <br>
+              <span class="author-block">
+                <!-- <a href="">Kun Yan</a><sup>2</sup>, -->
+                Kun Yan<sup>34</sup>,
+              </span>
+              <span class="author-block">
+                <!-- <a href="">Yuhan Wang</a><sup>2</sup>, -->
+                Yuhan Wang<sup>5</sup>,
+              </span>
+              <span class="author-block">
+                <!-- <a href="">Lei Ji</a><sup>3</sup>, -->
+                Lei Ji<sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <!-- <a href="">Xuhai Xu</a><sup>3</sup>, -->
+                Xuhai Xu<sup>6</sup>,
+              </span>
+              <span class="author-block">
+                <!-- <a href="">Chun Yu</a><sup>†,1</sup>, -->
+                Chun Yu<sup>1</sup>,
+              </span>
+            </div>
+
+            
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup><font size="-0.4">*</sup>Corresponding author</font></span><br>
+
+              <span class="author-block"><sup>1</sup>Tsinghua University,</span>
+              <span class="author-block"><sup>2</sup>Qinghai University,</span>
+              <span class="author-block"><sup>3</sup>Microsoft Research,</span>
+              <span class="author-block"><sup>4</sup>Beihang University,</span>
+              <span class="author-block"><sup>5</sup>Beijing University of Posts and Telecommunications,</span>
+              <span class="author-block"><sup>6</sup>Massachusetts Institute of Technology</span>
+
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://dl.acm.org/doi/10.1145/3659623"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                    <a href="https://arxiv.org/abs/2405.07652"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                          <i class="ai ai-arxiv"></i>
+                      </span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+                <span class="link-block">
+                  <a href="https://github.com/Sky-Wang326/gvoila"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- abstract -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="columns is-centered">
+          <img src="static/images/g-voila/start.png"  />
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Modern information querying systems are progressively incorporating multimodal inputs like vision and audio. However, the integration of gaze --- a modality deeply linked to user intent and increasingly accessible via gaze-tracking wearables --- remains underexplored. This paper introduces a novel gaze-facilitated information querying paradigm, named G-VOILA, which synergizes users’ gaze, visual field, and voice-based natural language queries to facilitate a more intuitive querying process. We further: 
+            </p>
+            <p>
+              (1) conducted an user-enactment study that reveals users’ natural query behavior in a mouth-eye coordination manner within the G-VOILA paradigm, as well as revealed qualitative and quantitative findings.
+            </p>
+            <p>
+              (2) proposed a design framework for intelligent assistant within the G-VOILA paradigm upon insights gained from the user-enactment study. We implemented a proof-of-concept assistant under the proposed framework, namely VOILA-G.
+            </p>
+            <p>
+              (3) conducted a user study that validated VOILA-G’s effectiveness in inferring users’ query intent and showed significantly better subjective outcomes across several metrics including satisfaction, usefulness, and mental demand etc.
+            </p> 
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- user study1 -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+            <h2 class="title is-3">User Study1: user enactment study</h2>
+            <div class="content has-text-justified">
+              <p>
+                To investigate user's querying behavior with G-VOILA, we conducted a user-enactment study where participants submit queries in any manner they believed G-VOILA should be able to comprehend and respond to, given its sensing capabilities. Hardware information and experiment setup are shown as below.
+              </p>
+              <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="10%"></td>
+                    <td width="40%">
+                    <img src="static/images/g-voila/hardware.png"/>
+                    <p class="has-text-centered"><a href="https://pupil-labs.com/products/invisible">Pupil Labs Invisible</a></p>
+                    </td>
+                    <td width="13%"></td>
+                    <td width="27%">
+                      <img src="static/images/g-voila/user-study1.png" />
+                    </td>
+                    <td width="10%"></td>
+                </tr>
+              </table>
+              <p>We answer three research questions through data collected in this user enactment study and list take-away conclusions. For detailed analysis and discussion, please refer to our paper.</p>
+            </div>
+
+            <h4 class="title is-6">RQ1: How do users perceive and anticipate an IR system under the G-VOILA paradigm?</h4>
+            <div class="content has-text-justified has-text-centered">
+              <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="10%"></td>
+                    <td width="80%">
+                    <img src="static/images/g-voila/us1-rq1.png"/>
+                    <p class="has-text-centered ">Breakdown of user queries by their anticipation of G-VOILA usage. “Lessons learned” are short for “Lessons learned from other well-designed system”.</p>
+                    </td>
+                    <td width="10%"></td>
+                </tr>
+              </table>
+              <div style="background-color: #eee; padding: 20px;">
+              <p>
+                <i><b>Take-aways:</b></i> The majority of user queries anticipate G-VOILA to leverage gaze data to pinpoint objects of interest (67.2%) and visual data to supplement context information (22.2%).
+              </p>
+              </div>
+            </div>
+              
+
+            <h4 class="title is-6">RQ2: What distinctive language expression patterns do users exhibit with G-VOILA?</h4>
+            <div class="content has-text-justified has-text-centered">
+              <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="40%">
+                      <p>
+                        By comparing user's verbal questions with their reformulated queries, we identified three categories of language expression patterns: <br>
+                        1. <b>Explicit Inquries.</b><br>
+                        2. <b>Omission with Language Indicator – Using Pronouns.</b> By replacing the pronouns with referred objects, the agent can convert it into an explicit inquiry. <br>
+                        3. <b>Omission at Semantic Level.</b> Queries may seem complete linguistically but lack specific descriptive information, leading to a broader answer scope.
+                      </p>
+                      <div style="background-color: #eee; padding: 20px;">
+                        <p>
+                          <i><b>Take-aways:</b></i> The majority of user queries involve usage of pronouns (68%, 48%, 43%) and omission of certain constraint (20%, 40%, 39%).
+                        </p>
+                        </div>
+                    </td>
+                    <td width="60%">
+                    <img src="static/images/g-voila/us1-rq2.png"/>
+                    <p class="has-text-centered ">Identified categories were shown in each card, with a checkmark
+                      indicating the required data for refilling user’s query intent.</p>
+                    </td>
+                </tr>
+              </table>
+            </div>
+
+
+            <h4 class="title is-6">RQ3: How are users’ gaze patterns spatiotemporally related to their spoken query language?</h4>
+            <div class="content has-text-justified has-text-centered">
+              <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="50%">
+                    <img src="static/images/g-voila/us1-rq3-1.png" style="width:400px; vertical-align:middle;" />
+                    <div style="background-color: #eee; padding: 20px;">
+                    <p>
+                      <i><b>Take-aways:</b></i> Although users may have wandering gaze on irrelevant surroundings when expressing queries, they tend to focus longer on relevant objects(𝑚𝑒𝑎𝑛 ≈1.1𝑠) than irrelevant objects (𝑚𝑒𝑎𝑛 ≈0.75𝑠).
+                    </p>
+                    </div>
+                    </td>
+                    <td width="50%">
+                      <img src="static/images/g-voila/us1-rq3-2.png" style="width:400px; vertical-align:middle;" />
+                      <div style="background-color: #eee; padding: 20px;">
+                      <p>
+                        <i><b>Take-aways:</b></i> User’s visual attention on relevant objects peaks at the mention of pronouns and then shifts away, indicating the existence of mouth-eye coordination but with gaze movements ahead.
+                      </p>
+                      </div>
+                    </td>
+                </tr>
+              </table>
+              <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="50%">
+                    <img src="static/images/g-voila/us1-rq3-3.png" style="width:400px; vertical-align:middle;" />
+                    <div style="background-color: #eee; padding: 20px;">
+                    <p>
+                      <i><b>Take-aways:</b></i> Users demonstrate a pronounced focus on relevant objects at the beginning of query formulation.
+                    </p>
+                    </div>
+                    </td>
+                    <td width="50%">
+                      <img src="static/images/g-voila/us1-rq3-4.png" style="width:400px; vertical-align:middle;" />
+                      <div style="background-color: #eee; padding: 20px;">
+                      <p>
+                        <i><b>Take-aways:</b></i> Users typically engage with objects of interest before initiating a related query, with an average
+                        start up time of 4.62s.
+                      </p>
+                      </div>
+                    </td>
+                </tr>
+              </table>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- examples -->
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h3 class="title is-4">Examples</h3>
+        <!-- <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-steve has-text-centered">
+            <img src="static/images/voila-a/qa-example1.png" style="width: 250px;">
+          </div>
+          <div class="item item-steve has-text-centered">
+            <img src="static/images/voila-a/qa-example2.png" style="width: 250px;">
+          </div>
+          <div class="item item-steve has-text-centered">
+            <img src="static/images/voila-a/qa-example3.png" style="width: 250px;">
+          </div>
+          <div class="item item-steve has-text-centered">
+            <img src="static/images/voila-a/qa-example4.png" style="width: 250px;">
+          </div>
+          <div class="item item-steve has-text-centered">
+            <img src="static/images/voila-a/qa-example5.png" style="width: 250px;">
+          </div>
+          <div class="item item-steve has-text-centered">
+            <img src="static/images/voila-a/qa-example6.png" style="width: 250px;">
+          </div>
+          <div class="item item-steve has-text-centered">
+            <img src="static/images/voila-a/qa-example7.png" style="width: 250px;">
+          </div>
+          <div class="item item-steve has-text-centered">
+            <img src="static/images/voila-a/qa-example8.png" style="width: 250px;">
+          </div>
+        </div> -->
+        <br>
+        <p class="has-text-centered">Examples of ... </p> 
+      </div>
+    </div>
+  </section>
+
+  <!-- user study2 -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">User Study2 with Preliminary Implementation</h2>
+          <div class="content has-text-justified">
+            <p>
+              We leverage several open-source vision models and GPT-4 to implement a functional gaze-faciliatated querying system, referred to as <b>VOILA-G</b>. We included 16 participants to query with VOILA-G in two daily scenarios: shopping and domestic living. We also implemented several baselines for comparison which difference lies in the method of incorporating gaze. (Note that VOILA-A was not yet available by the time this work was done.) Users were required to score the answers based on their satisfaction, usefulness, and mental demand, etc.
+              <br>
+              Participants were involved in a 4-round querying session, with each round consisting of 6 queries. The variables in this study include:
+              (1) Querying paradigm (whether user notice the existence of gaze sensing);
+              (2) Baseline models. For detailed experiment pipeline and implementation details, please refer to our paper.
+            </p>
+          </div>
+
+          <h3 class="title is-4">Objective Scoring</h3>
+          <div class="content has-text-justified">
+            <p>We calculated the objective score by examining whether the key objects in the ground truth label appeared in the response and identified semantically parallel objects as detected keywords. We categorized the questions into Explicit Query and Ambiguous Query based on whether key object names were spoken in the query.</p>
+            <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                  <td width="10%"></td>
+                  <td width="80%">
+                  <img src="static/images/g-voila/us2-objective.png"/>
+                  </td>
+                  <td width="10%"></td>
+              </tr>
+            </table>
+            <div style="background-color: #eee; padding: 20px;">
+              <p>
+                <i><b>Take-aways:</b></i> Incorporating gaze as a temporal and spatial indicator can both enhance the ability to discern user’s interest. A synergistic catalytic effect exists when incorporating both temporal and spatial properties. Head direction can be used as a less precise indicator of user’s intent. Existing saliency models fall short for G-VOILA’s use case.
+              </p>
+              </div>
+          </div>
+
+          <h3 class="title is-4">Subjective Scoring</h3>
+          <div class="content has-text-justified">
+            <p>The subjective scoring for each answer indicates that participants felt VOILA-G can more effectively captured their query intentions with the aid of gaze data. For querying paradigm, participants' preferences for the two strategies varied individually, with G-VOILA holding an overall advantage.</p>
+            <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                  <td width="10%"></td>
+                  <td width="80%">
+                  <img src="static/images/g-voila/us2-subjective.png"/>
+                  </td>
+                  <td width="10%"></td>
+              </tr>
+            </table>
+          </div>
+
+          <h3 class="title is-4">Three round usage</h3>
+          <div class="content has-text-justified">
+            <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                  <td width="10%"></td>
+                  <td width="80%">
+                  <img src="static/images/g-voila/us2-3round.png"/>
+                  </td>
+                  <td width="10%"></td>
+              </tr>
+            </table>
+            <div style="background-color: #eee; padding: 20px;">
+              <p>
+                <i><b>Take-aways:</b></i> As users became more familiar with G-VOILA, they increasingly leveraged its capabilities by posing more ambiguous queries, which have lower performance degradation on VOILA-G and better user experience.
+              </p>
+              </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+    @article{wang2024g,
+        title={G-VOILA: Gaze-Facilitated Information Querying in Daily Scenarios},
+        author={Wang, Zeyu and Shi, Yuanchun and Wang, Yuntao and Yao, Yuchen and Yan, Kun and Wang, Yuhan and Ji, Lei and Xu, Xuhai and Yu, Chun},
+        journal={Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies},
+        volume={8},
+        number={2},
+        pages={1--33},
+        year={2024},
+        publisher={ACM New York, NY, USA}
+    }
+    </code></pre>
+    </div>
+  </section>
+
+
+
+</body>
